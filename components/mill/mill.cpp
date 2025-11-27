@@ -30,8 +30,8 @@ void MillClimate::loop() {
 
 climate::ClimateTraits MillClimate::traits() {
     auto traits = climate::ClimateTraits();
-    traits.set_supports_action(true);
-    traits.set_supports_current_temperature(true);
+    traits.add_feature_flags(esphome::climate::CLIMATE_FEATURE_ACTION);
+    traits.add_feature_flags(esphome::climate::CLIMATE_FEATURE_CURRENT_TEMPERATURE);
     traits.set_visual_min_temperature(5);
     traits.set_visual_max_temperature(30);
     traits.set_visual_temperature_step(1);
